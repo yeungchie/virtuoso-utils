@@ -4,4 +4,6 @@
 ; Author   : YEUNGCHIE
 ;--------------------------
 
+ycLoadi("src/ycQuickSetPhysicalBinding.il")
+
 ; END
