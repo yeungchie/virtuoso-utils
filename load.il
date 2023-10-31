@@ -5,5 +5,7 @@
 ;--------------------------
 
 ycLoadi("src/ycQuickSetPhysicalBinding.il")
+ycLoadi("src/ycConvertTextDisplayToLabel.il")
+ycLoadi("src/ycCopyTextDisplayToLabel.il")
 
 ; END
