@@ -9,5 +9,7 @@ ycLoadi("src/ycConvertTextDisplayToLabel.il")
 ycLoadi("src/ycCopyTextDisplayToLabel.il")
 ycLoadi("src/ycGenLabelFromFig.il")
 ycLoadi("src/ycGetSchTermNames.il")
+ycLoadi("src/ycGetHierMemFigGroup.il")
+ycLoadi("src/ycFigGroupReturn.il")
 
 ; END
