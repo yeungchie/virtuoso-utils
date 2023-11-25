@@ -11,5 +11,6 @@ ycLoadi("src/ycGenLabelFromFig.il")
 ycLoadi("src/ycGetSchTermNames.il")
 ycLoadi("src/ycGetHierMemFigGroup.il")
 ycLoadi("src/ycFigGroupReturn.il")
+ycLoadi("src/ycCreateSchPin.il")
 
 ; END
