@@ -15,5 +15,6 @@ ycLoadi("src/ycCreateSchPin.il")
 ycLoadi("src/ycRemoveShapeRedundant.il")
 ycLoadi("src/ycToggleNetHilightAndDimming.il")
 ycLoadi("src/ycGetSortedSelectByLine.il")
+ycLoadi("src/ycSaveCellView.il")
 
 ; END
