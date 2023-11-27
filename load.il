@@ -14,5 +14,6 @@ ycLoadi("src/ycFigGroupReturn.il")
 ycLoadi("src/ycCreateSchPin.il")
 ycLoadi("src/ycRemoveShapeRedundant.il")
 ycLoadi("src/ycToggleNetHilightAndDimming.il")
+ycLoadi("src/ycGetSortedSelectByLine.il")
 
 ; END
