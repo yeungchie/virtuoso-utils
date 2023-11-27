@@ -12,5 +12,6 @@ ycLoadi("src/ycGetSchTermNames.il")
 ycLoadi("src/ycGetHierMemFigGroup.il")
 ycLoadi("src/ycFigGroupReturn.il")
 ycLoadi("src/ycCreateSchPin.il")
+ycLoadi("src/ycRemoveShapeRedundant.il")
 
 ; END
