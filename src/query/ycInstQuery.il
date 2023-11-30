@@ -7,11 +7,11 @@
 procedure(ycInstQuery(cvId \@optional lcv bBox grep startLevel(0) stopLevel(dbGetMaxHierDepth()-1) "dllgxx")
     prog((instHierPaths matchedList)
         unless(cvId~>objType == "cellView"
-            ycError("%s: Invalid cellView - %A" cvId~>objType)
+            ycError("Invalid cellView - %A" cvId~>objType)
         )
         bBox = bBox || cvId~>bBox
         unless(isBBox(bBox)
-            ycWarn("%s: Invalid bBox - %A" bBox)
+            ycWarn("Invalid bBox - %A" bBox)
             return()
         )
 
