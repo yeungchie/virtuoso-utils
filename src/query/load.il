@@ -10,6 +10,7 @@ ycLoadi("ycIsOcc.il")
 ycLoadi("ycGetOccFig.il")
 ycLoadi("ycGetOccInst.il")
 ycLoadi("ycGetOccTransform.il")
+ycLoadi("ycGetOccFigTransform.il")
 ycLoadi("ycCopyOccFig.il")
 
 ; END
