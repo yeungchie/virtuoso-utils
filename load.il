@@ -17,13 +17,6 @@ ycLoadi("src/ycToggleNetHilightAndDimming.il")
 ycLoadi("src/ycGetSortedSelectByLine.il")
 ycLoadi("src/ycSaveCellView.il")
 
-; query
-ycLoadi("src/query/ycShapeQuery.il")
-ycLoadi("src/query/ycInstQuery.il")
-ycLoadi("src/query/ycIsOcc.il")
-ycLoadi("src/query/ycGetOccFig.il")
-ycLoadi("src/query/ycGetOccInst.il")
-ycLoadi("src/query/ycGetOccTransform.il")
-ycLoadi("src/query/ycCopyOccFig.il")
+ycLoadi("src/query/load.il")
 
 ; END
