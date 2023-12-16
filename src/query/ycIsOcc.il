@@ -5,30 +5,43 @@
 ;--------------------------------
 
 procedure(ycIsOcc(occ "g")
-    when(occ
+    prog((coord)
+        unless(occ
+            return() ; nil
+        )
         if(listp(occ)
         then
             occ = reverse(occ)
-            if(dbIsId(car(occ))
-            then
-                t
-            else
-                forall(x cdr(occ)
-                    if(listp(x)
-                    then
-                        and(
-                            dbIsId(car(x))
-                            member(x~>objType list("inst" "mosaic"))
-                            forall(y cdr(x) fixp(y))
-                        )
-                    else
-                        dbIsId(x) && member(x~>objType list("inst" "mosaic"))
+            unless(dbIsId(car(occ))
+                return() ; ( ... <non-dbobject> )
+            )
+            unless(cdr(occ)
+                return() ; ( <dbobject> )
+            )
+            foreach(inst cdr(occ)
+                unless(inst
+                    return() ; ( ... nil ... <dbobject> )
+                )
+                if(listp(inst)
+                then
+                    coord = cdr(inst)
+                    inst = car(inst)
+                    unless(dbIsId(inst) && inst~>objType == "mosaic"
+                        return() ; ( ... ( <non-dbobject or non-mosaic> ... ) ... <dbobject> )
+                    )
+                    unless(fixp(xCoord(coord)) && fixp(yCoord(coord))
+                        return() ; ( ... ( <mosaic> <non-fixnum> or <non-fixnum> ) ... <dbobject> )
+                    )
+                else
+                    unless(dbIsId(inst) && inst~>objType == "inst"
+                        return() ; ( ... <non-dbobject or non-inst> ... <dbobject> )
                     )
                 )
             )
         else
-            dbIsId(occ)
+            return(dbIsId(occ)) ; <dbobject>
         )
+        return(t)
     )
 )
 
