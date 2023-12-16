@@ -5,7 +5,7 @@
 ;--------------------------------
 
 procedure(ycInstQuery(cvId \@optional lcv bBox grep startLevel(0) stopLevel(dbGetMaxHierDepth()-1) "dllgxx")
-    prog((instHierPaths matchedList)
+    prog((instHierPaths lcvList matchedList)
         unless(cvId~>objType == "cellView"
             ycError("Invalid cellView - %A" cvId~>objType)
         )
@@ -15,13 +15,27 @@ procedure(ycInstQuery(cvId \@optional lcv bBox grep startLevel(0) stopLevel(dbGe
             return()
         )
 
-        instHierPaths = dbInstQuery(cvId bBox startLevel stopLevel)
-
-        unless(forall(x lcv pairp(x))
-            lcv = list(lcv)
+        when(lcv
+            cond(
+                (forall(x lcv stringp(x) || !x)
+                    lcvList = list(lcv)
+                )
+                (forall(x lcv pairp(x) && forall(y x stringp(y) || !y))
+                    lcvList = lcv
+                )
+                (t
+                    ycError("Invalid lcv - %A" lcv)
+                )
+            )
         )
 
-        foreach(items lcv
+        instHierPaths = dbInstQuery(cvId bBox startLevel stopLevel)
+
+        unless(lcv
+            return(instHierPaths)
+        )
+
+        foreach(items lcvList
             let((lib libp cell cellp view viewp)
                 libp  = (lib  = nth(0 items)) && stringp(lib)  && !blankstrp(lib)   ; 判断 lib  是不是有效信息
                 cellp = (cell = nth(1 items)) && stringp(cell) && !blankstrp(cell)  ; 判断 cell 是不是有效信息
