@@ -14,7 +14,7 @@ procedure(ycShapeQuery(cvId \@optional lpp bBox grep startLevel(0) stopLevel(dbG
             ycError("Invalid bBox - %A" bBox)
         )
 
-        when(forall(x lpp pairp(x))
+        when(lpp && forall(x lpp pairp(x))
             foreach(x lpp
                 let((hierPaths)
                     when(hierPaths = ycShapeQuery(cvId x bBox grep startLevel stopLevel)
