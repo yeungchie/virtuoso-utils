@@ -12,5 +12,6 @@ ycLoadi("ycGetOccInst.il")
 ycLoadi("ycGetOccTransform.il")
 ycLoadi("ycGetOccFigTransform.il")
 ycLoadi("ycCopyOccFig.il")
+ycLoadi("ycOccParse.il")
 
 ; END
