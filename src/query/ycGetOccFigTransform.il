@@ -5,7 +5,12 @@
 ;--------------------------------
 
 procedure(ycGetOccFigTransform(occ "g")
-    dbGetHierPathTransform(append1(occ nil))
+    occ && dbGetHierPathTransform(
+        if(listp(occ)
+            append1(occ nil)
+            list(occ nil)
+        )
+    )
 )
 
 ; END
