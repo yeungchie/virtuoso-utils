@@ -18,6 +18,7 @@ procedure(ycConvertTextDisplayToLabel(fig "d")
                 )
             )
             dbDeleteObject(fig)
+            label
         )
     )
 )
