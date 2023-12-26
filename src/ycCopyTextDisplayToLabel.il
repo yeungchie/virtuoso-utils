@@ -22,7 +22,7 @@ procedure(ycCopyTextDisplayToLabel(fig cvId \@optional transform(list(0:0 "R0"))
             cvId
             fig~>lpp
             dbTransformPoint(fig~>xy transform)
-            fig~>owner~>name
+            get(fig~>owner fig~>text)
             fig~>justify
             fig~>orient
             fig~>font
