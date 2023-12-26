@@ -8,11 +8,11 @@ procedure(ycConvertTextDisplayToLabel(fig "d")
     prog((cvId label figGroup)
         cvId = fig~>cellView
         when(cvId~>mode == "r"
-            warn("failed to edit a read-only design.")
+            ycWarn("cannot to edit read-only design.")
             return()
         )
         unless(fig~>objType == "textDisplay"
-            warn("argument #1 should be textDisplay dbobject - %A" fig~>objType)
+            ycWarn("argument #1 should be a textDisplay dbobject - %A" fig~>objType)
             return()
         )
         label = dbCreateLabel(
@@ -26,12 +26,12 @@ procedure(ycConvertTextDisplayToLabel(fig "d")
             fig~>height
         )
         unless(label
-            warn("failed to create a new label.")
+            ycWarn("failed to create a new label(%A)" fig~>owner~>name)
             return()
         )
         when(figGroup = fig~>figGroup
             unless(dbAddFigToFigGroup(figGroup label)
-                warn("failed to add label to figGroup - %A" figGroup)
+                ycWarn("failed to add label(%A) to figGroup(%A)" label~>theLabel figGroup~>name)
             )
         )
         dbDeleteObject(fig)

@@ -5,24 +5,23 @@
 ;--------------------------
 
 procedure(ycCopyTextDisplayToLabel(fig cvId \@optional transform(list(0:0 "R0")) "ddl")
-    prog((xy label)
+    prog((label)
         unless(cvId~>objType == "cellView"
-            warn("argument #2 should be cellView dbobject - %A" cvId~>objType)
+            ycWarn("argument #2 should be cellView dbobject - %A" cvId~>objType)
             return()
         )
         when(cvId~>mode == "r"
-            warn("failed to edit a read-only design.")
+            ycWarn("cannot edit read-only design.")
             return()
         )
         unless(fig~>objType == "textDisplay"
-            warn("argument #1 should be textDisplay dbobject - %A" fig~>objType)
+            ycWarn("argument #1 should be a textDisplay dbobject - %A" fig~>objType)
             return()
         )
-        xy = dbTransformPoint(fix~>xy transform)
         label = dbCreateLabel(
             cvId
             fig~>lpp
-            xy
+            dbTransformPoint(fig~>xy transform)
             fig~>owner~>name
             fig~>justify
             fig~>orient
@@ -30,7 +29,7 @@ procedure(ycCopyTextDisplayToLabel(fig cvId \@optional transform(list(0:0 "R0"))
             fig~>height
         )
         unless(label
-            warn("failed to copy.")
+            ycWarn("failed to create a new label(%A)" fig~>owner~>name)
             return()
         )
         return(label)
