@@ -4,6 +4,8 @@
 ; Author   : YEUNGCHIE
 ;--------------------------
 
+ycLoadi("alias/load.il")
+
 ycLoadi("src/ycQuickSetPhysicalBinding.il")
 ycLoadi("src/ycConvertTextDisplayToLabel.il")
 ycLoadi("src/ycCopyTextDisplayToLabel.il")
@@ -16,6 +18,7 @@ ycLoadi("src/ycRemoveShapeRedundant.il")
 ycLoadi("src/ycToggleNetHilightAndDimming.il")
 ycLoadi("src/ycGetSortedSelectByLine.il")
 ycLoadi("src/ycSaveCellView.il")
+ycLoadi("src/ycGetTechFile.il")
 
 ycLoadi("src/query/load.il")
 
