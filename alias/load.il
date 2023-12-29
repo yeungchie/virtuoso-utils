@@ -4,6 +4,12 @@
 ; Author   : YEUNGCHIE
 ;--------------------------
 
-alias(tech ycGetTechFile)
+alias( sel   geGetSelSet          )
+alias( ecv   geGetEditCellView    )
+alias( wcv   geGetWindowCellView  )
+alias( wind  hiGetCurrentWindow   )
+alias( ciw   hiGetCIWindow        )
+alias( fg    leGetEditFigGroup    )
+alias( tech  ycGetTechFile        )
 
 ; END
