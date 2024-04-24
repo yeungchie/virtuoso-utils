@@ -5,14 +5,19 @@
 ;--------------------------
 
 procedure(ycSaveCellView(cvId "d")
-    if(cvId~>mode == "r"
-    then
-        ycWarn("Attempt to save a read-only design.")
-    else
-        while(cvId~>modifiedButNotSaved
-            dbSave(cvId)
+    cond(
+        (cvId~>objType != "cellView"
+            ycError("argument #1 should be a cellView object - %A" cvId)
         )
-        t
+        (cvId~>mode == "r"
+            ycWarn("Attempt to save a read-only design.")
+        )
+        (t
+            while(cvId~>modifiedButNotSaved
+                dbSave(cvId)
+            )
+            t
+        )
     )
 )
 
