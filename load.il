@@ -19,6 +19,7 @@ ycLoadi("src/ycToggleNetHilightAndDimming.il")
 ycLoadi("src/ycGetSortedSelectByLine.il")
 ycLoadi("src/ycSaveCellView.il")
 ycLoadi("src/ycGetTechFile.il")
+ycLoadi("src/ycCreateLibrary.il")
 
 ycLoadi("src/query/load.il")
 
