@@ -22,6 +22,7 @@ ycLoadi("src/ycSaveCellView.il")
 ycLoadi("src/ycGetTechFile.il")
 ycLoadi("src/ycCreateLibrary.il")
 ycLoadi("src/ycCreateShapeDict.il")
+ycLoadi("src/ycGenDeviceSpecimenView.il")
 
 ycLoadi("src/query/load.il")
 
