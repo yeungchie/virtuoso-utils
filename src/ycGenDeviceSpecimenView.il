@@ -43,6 +43,7 @@ procedure(ycGenDeviceSpecimenView(libName cellName \@key viewName("schematic") t
         )
         schCheck(cvId)
         dbSave(cvId)
+        dbReopen(cvId "r")
         t
     )
 )
